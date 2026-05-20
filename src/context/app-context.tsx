@@ -40,14 +40,14 @@ function loadSettings(): AppSettings {
   return defaultSettings;
 }
 
-// function loadFavourites(): string[] {
-//   if (typeof window === "undefined") return [];
-//   try {
-//     const stored = localStorage.getItem(FAVOURITES_STORAGE_KEY);
-//     if (stored) return JSON.parse(stored);
-//   } catch {}
-//   return [];
-// }
+function loadFavourites(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = localStorage.getItem(FAVOURITES_STORAGE_KEY);
+    if (stored) return JSON.parse(stored);
+  } catch {}
+  return [];
+}
 
 //ui function
 function applyTheme(theme: ThemeConfig, brandOverride?: string) {
