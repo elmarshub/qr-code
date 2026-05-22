@@ -29,16 +29,16 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-// function loadSettings(): AppSettings {
-//   if (typeof window === "undefined") return defaultSettings;
-//   try {
-//     const stored = localStorage.getItem(SETTINGS_STORAGE_KEY);
-//     if (stored) {
-//       return { ...defaultSettings, ...JSON.parse(stored) };
-//     }
-//   } catch {}
-//   return defaultSettings;
-// }
+function loadSettings(): AppSettings {
+  if (typeof window === "undefined") return defaultSettings;
+  try {
+    const stored = localStorage.getItem(SETTINGS_STORAGE_KEY);
+    if (stored) {
+      return { ...defaultSettings, ...JSON.parse(stored) };
+    }
+  } catch {}
+  return defaultSettings;
+}
 
 function loadFavourites(): string[] {
   if (typeof window === "undefined") return [];
